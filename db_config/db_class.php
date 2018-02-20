@@ -17,17 +17,15 @@ class database
     function connect()
     {
         require 'db_config.php';
+
         if ($this->DB_CON == false)
         {
-            try
-            {
-                $this->DB_CON = new PDO(
-                $DB_DSN,
-                $DB_USER,
-                $DB_PASSWORD,
-                $DB_OPT
-                );
-            }
+            $this->DB_CON = new PDO(
+            $DB_DSN,
+            $DB_USER,
+            $DB_PASSWORD,
+            $DB_OPT
+            );
             if ($this->DB_CON == false)
             {
                 echo "Connection to DB failed";
