@@ -11,27 +11,33 @@ function page_header($title)
             <title> <?php echo $title ?> </title>
         </header>
         <body>
-        <?php if (!isset($_SESSION['id']))
-        {
-        ?>
         <div class="dropdown">
-            <button class="dropbtn">Menu</button>
+            <button class="dropbtn">MENU</button>
             <div class="dropdown-content">
+            <?php
+            if (!isset($_SESSION['id']))
+            {
+            ?>
                 <a href="index.php">Gallerie</a>
                 <a href="signin.php">Connexion</a>
                 <a href="signup.php">Inscription</a>
+            <?php
+            }
+            else
+            {
+                $_SESSION['id'] = "";
+            ?>
+                <a href="index.php">Gallerie</a>
+                <a href="upload_photo.php">Upload une photo</a>
+                <a href="parameters.php">Param&egravetres</a>
+            <?php
+            }
+            ?>
             </div>
         </div>
         <div class="header_banner"><a href="index.php" alt="retour a l'index"><img src="../rsrc/banner.png"></a></div>
         <hr>
         <?php
-        }
-        else
-        {
-            //TODO verifier si user est bien log et afficher bouton en consequence
-        ?>
-        <?php
-        }
 }
 
 function page_footer()
