@@ -25,7 +25,6 @@ function page_header($title)
             }
             else
             {
-                $_SESSION['id'] = "";
             ?>
                 <a href="index.php">Gallerie</a>
                 <a href="upload_photo.php">Upload une photo</a>
@@ -36,7 +35,7 @@ function page_header($title)
             </div>
         </div>
         <div class="header_banner"><a href="index.php" alt="retour a l'index"><img src="../rsrc/banner.png"></a></div>
-        <hr>
+        <br /><hr>
         <?php
 }
 
